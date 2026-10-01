@@ -12,7 +12,7 @@ Create a forgot password button and implement the backend into it as well
 
 Users can add friends, each represented by a customizable animal avatar chosen from a preset gallery  
 For each friend, store: name, chosen animal, last contacted date, and a custom check-in frequency   
-For the checking frequency, make it a slider from one week to one year. Have an advanced button under it that allows the user to make a more precise custom check-in that has a day, month, year option. Make these options like a wheel with numbers. Similar to: Timer.PNG
+For the checking frequency, allow the user to make precise custom check-in that has a day, month, year option. Make these options like a wheel with numbers. Similar to: Timer.PNG
 
 ## 3\. Check-in tracking & visual states
 
@@ -61,3 +61,9 @@ Build using a cross-platform framework if web support is planned later
 Backend with user accounts, friend records, and check-in history stored in a database to support multi-platform login  
 Use local notification scheduling (e.g., iOS UserNotifications framework) tied to each friend's stored interval and last-contact timestamp
 
+## 8\. Shop
+The main show page includes all of the different collections for animal icons. Refer to Shop.JPG
+The currency of the shop will be called "treats" and it is the bottom two drawings in the Colors_logos.JPG. These treats will be at the top right hand corner of the Shop and Collections pages. (i forgot to add it in my collections drawing but it should be top right but to the left of the back button)
+When clicking one of the collections, it takes you to Collection.JPG where you see all of the logos in the collection and can click on them and see their different states. 
+Each of the animal logos says their name and the cost of treats required. 
+To buy the icon, you have to click on the buy button under the currently clicked animal icon.

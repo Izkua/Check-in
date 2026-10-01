@@ -2,9 +2,9 @@
 
 - Make all edges rounded  
 - Use cute font  
-- Color pallet: Colors\_logo.JPG  
+- Color pallet: Colors\_logos.JPG  
 - All pages default background: Background.jpg  
-- Logo: Colors\_logo.JPG  
+- Logo: Colors\_logos.JPG  
 - For all buttons, when the user clicks on it, the button should flash darker color 
 
 Note: in all of the sketches below do not make the things in blue, green, or purple visible  
@@ -34,6 +34,7 @@ When click on animal icon the screen turns into: Icon\_options.JPG
 Layout for creating new person: Create.JPG  
 Layout for looking at person: Person.JPG  
 Layout for editing frequency of person: Edit\_frequency.JPG  
+Layout for reading the full note: Edit_note.JPG
 Layout for adding a note: Edit\_add\_note.JPG  
 Layout for deleting a note: Edit\_delete\_note.JPG
 

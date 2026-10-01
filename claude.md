@@ -18,8 +18,7 @@ When implementing a page:
 - Do not modify unrelated parts of the application
 
 ## Before implementing a page
-Read the relevant section of '/docs/app-spec.md' and inspect the corresponding design image.
+Read the relevant section of 'app-spec.md' and inspect the corresponding design image.
 
 ## Responsive design
 The original designs were created for mobile devices such as iPad, iPhone, and Android 
-
