@@ -1,5 +1,3 @@
-import { ComingSoon } from '../src/components/ComingSoon';
+import { NotificationsScreen } from '../src/features/settings/NotificationsScreen';
 
-export default function Screen() {
-  return <ComingSoon title="Notifications" />;
-}
+export default NotificationsScreen;

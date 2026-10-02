@@ -1,5 +1,3 @@
-import { ComingSoon } from '../src/components/ComingSoon';
+import { ColorsScreen } from '../src/features/settings/ColorsScreen';
 
-export default function Screen() {
-  return <ComingSoon title="Color Palette" />;
-}
+export default ColorsScreen;

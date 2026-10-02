@@ -1,5 +1,3 @@
-import { ComingSoon } from '../src/components/ComingSoon';
+import { SoundScreen } from '../src/features/settings/SoundScreen';
 
-export default function Screen() {
-  return <ComingSoon title="Sound Setting" />;
-}
+export default SoundScreen;

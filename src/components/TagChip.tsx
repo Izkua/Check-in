@@ -22,7 +22,7 @@ export function TagChip({ label, selected = false, onPress, small = false }: Pro
       accessibilityState={{ selected }}
       style={[styles.chip, small && styles.small]}
     >
-      <AppText numberOfLines={1} style={[styles.text, small && styles.smallText, { color: selected ? '#fff' : palette.cardText }]}>
+      <AppText numberOfLines={1} style={[styles.text, small && styles.smallText, { color: selected ? palette.onSecondary : palette.cardText }]}>
         {label}
       </AppText>
     </FlashPressable>

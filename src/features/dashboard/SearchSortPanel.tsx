@@ -51,7 +51,7 @@ export function SearchSortPanel({ query, onQueryChange, sort, onSortChange }: Pr
               accessibilityState={{ selected }}
               style={styles.chip}
             >
-              <AppText style={[styles.chipText, { color: selected ? '#fff' : palette.cardText }]}>{t(label)}</AppText>
+              <AppText style={[styles.chipText, { color: selected ? palette.onSecondary : palette.cardText }]}>{t(label)}</AppText>
             </FlashPressable>
           );
         })}

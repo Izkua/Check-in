@@ -1,26 +1,38 @@
-/** Defaults sampled from designs/Colors_logos.JPG and Colors.JPG. */
-export interface Palette {
-  primary: string;    // main green
-  secondary: string;  // darker green, text + accents
-  accent: string;     // peach: buttons, titles, panels
-  important: string;  // destructive / attention
-  card: string;       // cream panel surface
-  cardText: string;
+import { darkenHex, mix, readableTextOn } from '../lib/color';
+
+/** The four colors the user can change on the Color Palette page. */
+export interface BaseColors {
+  primary: string;    // page base color (shows through the background image)
+  secondary: string;  // buttons, icons, selected chips
+  accent: string;     // titles, pills, panels
+  important: string;  // delete / errors
 }
 
-export const DEFAULT_PALETTE: Palette = {
+/** Defaults sampled from designs/Colors_logos.JPG and Colors.JPG. */
+export const DEFAULT_COLORS: BaseColors = {
   primary: '#A4D484',
   secondary: '#8CC46C',
   accent: '#FCE0B8',
   important: '#E53935',
-  card: '#FDEFDB',
-  cardText: '#3F7A2B', // darker than secondary so text stays readable on cream
 };
+
+/** Everything screens use: the four chosen colors plus colors derived from them. */
+export interface Palette extends BaseColors {
+  card: string;        // cream panel surface (a soft tint of accent)
+  cardText: string;    // readable text on cards (a deep tone of secondary)
+  onSecondary: string; // text on secondary-colored buttons
+}
+
+export function buildPalette(c: BaseColors): Palette {
+  return {
+    ...c,
+    card: mix(c.accent, '#FFFFFF', 0.5),
+    cardText: darkenHex(c.secondary, 0.45),
+    onSecondary: readableTextOn(c.secondary),
+  };
+}
 
 /** Darkens a #RRGGBB color by `amount` (0-1). Used for the press-flash on buttons. */
 export function darken(hex: string, amount = 0.12): string {
-  const n = parseInt(hex.replace('#', ''), 16);
-  const f = (c: number) => Math.max(0, Math.round(c * (1 - amount)));
-  const r = f((n >> 16) & 255), g = f((n >> 8) & 255), b = f(n & 255);
-  return `#${((r << 16) | (g << 8) | b).toString(16).padStart(6, '0')}`;
+  return darkenHex(hex, amount);
 }

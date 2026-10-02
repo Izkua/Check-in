@@ -69,7 +69,7 @@ export function CreateFriendScreen() {
           />
           {errorText && <AppText style={[styles.error, { color: palette.important }]}>{errorText}</AppText>}
           <FlashPressable color={palette.secondary} onPress={create} style={styles.create}>
-            <AppText style={styles.createText}>{t('friend.create')}</AppText>
+            <AppText style={[styles.createText, { color: palette.onSecondary }]}>{t('friend.create')}</AppText>
           </FlashPressable>
         </View>
       </ScrollView>

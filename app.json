@@ -29,6 +29,12 @@
         {
           "color": "#8CC46C"
         }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Check-in uses your photos so you can choose a custom background."
+        }
       ]
     ]
   }

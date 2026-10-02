@@ -1,25 +1,30 @@
 import React from 'react';
-import { ImageBackground, StyleSheet, View, ViewProps } from 'react-native';
+import { Image, StyleSheet, View, ViewProps } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from '../theme/ThemeProvider';
 
-/** Default page background (designs/Background.jpg) plus safe-area padding. */
+/**
+ * Page background plus safe-area padding. The default is the grass texture
+ * (designs/Background.jpg) laid softly over the Primary color, so changing Primary
+ * recolors it. An uploaded photo is shown as-is.
+ */
 export function ScreenBackground({ children, style, ...rest }: ViewProps) {
   const insets = useSafeAreaInsets();
-  const { palette } = useTheme();
+  const { palette, backgroundUri } = useTheme();
   return (
-    <ImageBackground
-      source={require('../../assets/images/background.jpg')}
-      style={[styles.fill, { backgroundColor: palette.primary }]}
-      resizeMode="cover"
-    >
+    <View style={[styles.fill, { backgroundColor: palette.primary }]}>
+      <Image
+        source={backgroundUri ? { uri: backgroundUri } : require('../../assets/images/background.jpg')}
+        style={[StyleSheet.absoluteFill, { opacity: backgroundUri ? 1 : 0.5 }]}
+        resizeMode="cover"
+      />
       <View
         {...rest}
         style={[styles.fill, { paddingTop: insets.top, paddingBottom: insets.bottom }, style]}
       >
         {children}
       </View>
-    </ImageBackground>
+    </View>
   );
 }
 

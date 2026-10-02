@@ -75,7 +75,7 @@ export function FriendScreen() {
             onChangeName={(name) => updateFriend(friend.id, { name })}
           />
           <FlashPressable color={palette.secondary} onPress={() => logCheckIn(friend.id)} style={styles.logButton}>
-            <AppText style={styles.logText}>{t('friend.logCheckIn')}</AppText>
+            <AppText style={[styles.logText, { color: palette.onSecondary }]}>{t('friend.logCheckIn')}</AppText>
           </FlashPressable>
           <FrequencyCard
             title={t('freq.title')}
